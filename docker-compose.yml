@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  jenkins-server:
+    image: bishopplusplus/springbootserver:latest
+    container_name: springboot-server
+    build: .
+    restart: always
+    volumes:
+      - /home/bishop/workspace/java-learn/springboot-restservice-learn:/home/runner/app
+    ports:
+      - "8080:8080"
+    # entrypoint: /home/runner/app/mvnw
+    # command: spring-boot:run
